@@ -1,34 +1,47 @@
+import { AuthLayout, DashboardLayout } from "./layouts";
+import {
+  AdminBookRentPage,
+  LoginPage,
+  RegisterPage,
+  SupervisorBookRentPage,
+} from "./pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   //   #region Auth
   {
-    path: "/auth",
-    element: <AuthLayout />,
+    errorElement: <h1>Page Not Found</h1>,
     children: [
       {
-        path: "/register",
-        element: <RegisterPage />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
-    ],
-  },
-  {
-    element: <DashboardLayout />,
-    children: [
-      //   #region Admin
-      {
-        path: "/admin/rents",
-        element: <AdminBookRentPage />,
-      },
+        path: "/auth",
+        element: <AuthLayout />,
 
-      //   #region Supervisor
+        children: [
+          {
+            path: "register",
+            element: <RegisterPage />,
+          },
+          {
+            path: "login",
+            element: <LoginPage />,
+          },
+        ],
+      },
       {
-        path: "/supervisor/rents",
-        element: <SupervisorBookRentPage />,
+        element: <DashboardLayout />,
+        children: [
+          //   #region Admin
+          {
+            path: "/admin/rents",
+            element: <AdminBookRentPage />,
+          },
+
+          //   #region Supervisor
+          {
+            path: "/supervisor/rents",
+            element: <SupervisorBookRentPage />,
+          },
+        ],
       },
     ],
   },
