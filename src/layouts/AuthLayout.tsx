@@ -13,7 +13,7 @@ export default function AuthLayout() {
 
   return (
     <>
-      <div className="h-screen bg-gray-300 flex justify-center items-center">
+      <div className="h-screen bg-gray-300 flex justify-center items-center p-5">
         <div className="bg-white rounded-md shadow-md p-8 md:w-2/3">
           <Outlet />
         </div>
