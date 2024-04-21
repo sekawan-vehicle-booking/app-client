@@ -20,6 +20,12 @@ export default function RegisterPage() {
           Register
         </button>
       </form>
+      <p className="mt-10">
+        Already have an account?{" "}
+        <a className="text-blue-600" href="/auth/login">
+          Login
+        </a>
+      </p>
     </>
   );
 }
