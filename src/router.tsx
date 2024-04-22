@@ -1,10 +1,7 @@
+import AdminRentContent from "./components/feature/admin/AdminRentContent";
+import AdminRentCreate from "./components/feature/admin/AdminRentCreate";
 import { AuthLayout, DashboardLayout } from "./layouts";
-import {
-  AdminBookRentPage,
-  LoginPage,
-  RegisterPage,
-  SupervisorBookRentPage,
-} from "./pages";
+import { LoginPage, RegisterPage, SupervisorBookRentPage } from "./pages";
 import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -33,7 +30,15 @@ export const router = createBrowserRouter([
           //   #region Admin
           {
             path: "/admin/rents",
-            element: <AdminBookRentPage />,
+            element: <AdminRentContent />,
+          },
+          {
+            path: "/admin/rents/create",
+            element: <AdminRentCreate />,
+          },
+          {
+            path: "/admin/vehicles",
+            element: <h1>Vehicles</h1>,
           },
 
           //   #region Supervisor
